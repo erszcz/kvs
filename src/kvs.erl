@@ -22,3 +22,26 @@
          values/1,
          with/2,
          without/2]).
+
+-type t() :: [{term(), term()}].
+
+-spec get(Key, KVs) -> Value when
+      Key :: term(),
+      KVs :: t(),
+      Value :: term().
+get(Key, KVs) ->
+    case lists:keyfind(Key, 1, KVs) of
+        false -> erlang:error({badkey, Key}, [Key, KVs]);
+        {Key, Value} -> Value
+    end.
+
+-spec get(Key, KVs, Default) -> Value when
+      Key :: term(),
+      KVs :: t(),
+      Default :: term(),
+      Value :: term().
+get(Key, KVs, Default) ->
+    case lists:keyfind(Key, 1, KVs) of
+        false -> Default;
+        {Key, Value} -> Value
+    end.
