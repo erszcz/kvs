@@ -45,6 +45,7 @@
 %% where the second element of each is `true'.
 %%
 %% The call fails with a `function_clause' if `Proplist' is not a list.
+%% @since 0.1.0
 -spec from_proplist(proplists:proplist()) -> t().
 from_proplist(Proplist) when is_list(Proplist) ->
     proplists:unfold(Proplist).
@@ -64,6 +65,7 @@ from_proplist(Proplist) when is_list(Proplist) ->
 %%      in function  kvs:get/2
 %%         called as kvs:get(z,[{a,3}])
 %% '''
+%% @since 0.1.0
 -spec get(Key, KVs) -> Value when
       Key :: term(),
       KVs :: t(),
@@ -87,6 +89,7 @@ get(Key, KVs) when is_list(KVs) ->
 %% > kvs:get(z, [{a, "Just a"}], "Default value").
 %% "Default value"
 %% '''
+%% @since 0.1.0
 -spec get(Key, KVs, Default) -> Value | Default when
       Key :: term(),
       KVs :: t(),
@@ -104,6 +107,7 @@ get(Key, KVs, Default) when is_list(KVs) ->
 %% are substituted with pairs where the second element of each is `true'.
 %%
 %% The call fails with a `function_clause' if `Proplist' is not a list.
+%% @since 0.1.0
 -spec proplist_to_map(proplists:proplist()) -> map().
 proplist_to_map(Proplist) when is_list(Proplist) ->
     maps:from_list(from_proplist(Proplist)).
