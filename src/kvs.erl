@@ -53,6 +53,17 @@ from_proplist(Proplist) when is_list(Proplist) ->
 %%
 %% The call fails with a `{badkey, Key}' exception if no value is associated with `Key',
 %% or with a `function_clause' if `KVs' is not a list.
+%%
+%% Example:
+%%
+%% ```
+%% > kvs:get(a, [{a, 3}]).
+%% 3
+%% > kvs:get(z, [{a, 3}]).
+%% ** exception error: {badkey,z}
+%%      in function  kvs:get/2
+%%         called as kvs:get(z,[{a,3}])
+%% '''
 -spec get(Key, KVs) -> Value when
       Key :: term(),
       KVs :: t(),
@@ -67,6 +78,15 @@ get(Key, KVs) when is_list(KVs) ->
 %% If no value is associated with `Key', `Default' is returned.
 %%
 %% The call fails with a `function_clause' if `KVs' is not a list.
+%%
+%% Example:
+%%
+%% ```
+%% > kvs:get(a, [{a, "Just a"}], "Default value").
+%% "Just a"
+%% > kvs:get(z, [{a, "Just a"}], "Default value").
+%% "Default value"
+%% '''
 -spec get(Key, KVs, Default) -> Value | Default when
       Key :: term(),
       KVs :: t(),
