@@ -30,12 +30,12 @@
         ]).
 
 -export_type([t/0,
-              keywords/0]).
+              keyword/0]).
 
 -type t() :: [{term(), term()}].
 %% The default `kvs' type - a list of key-value pairs.
 
--type keywords() :: [{atom(), term()}].
+-type keyword() :: [{atom(), term()}].
 %% An Elixir-compatible keyword list.
 %% A list of pairs in which the first item (the key) is an atom.
 
