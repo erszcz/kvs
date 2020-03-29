@@ -30,15 +30,23 @@
          %without/2
         ]).
 
--export_type([t/0,
-              keyword/0]).
+-export_type([t/0, t/2,
+              keyword/0, keyword/1]).
 
 -type t() :: [{term(), term()}].
 %% The default `kvs' type - a list of key-value pairs.
 
+-type t(K, V) :: [{K, V}].
+%% A list of key-value pairs, where the keys are of type `K' and values are of type `V'.
+
 -type keyword() :: [{atom(), term()}].
 %% An Elixir-compatible keyword list.
 %% A list of pairs in which the first item (the key) is an atom.
+
+-type keyword(T) :: [{atom(), T}].
+%% An Elixir-compatible keyword list.
+%% A list of pairs in which the first item (the key) is an atom
+%% and the second item is of type `T'.
 
 %% @doc Unfolds a `Proplist' into a list of key-value pairs.
 %%
@@ -67,10 +75,7 @@ from_proplist(Proplist) when is_list(Proplist) ->
 %%         called as kvs:get(z,[{a,3}])
 %% '''
 %% @since 0.1.0
--spec get(Key, KVs) -> Value when
-      Key :: term(),
-      KVs :: t(),
-      Value :: term().
+-spec get(Key, t(Key, Value)) -> Value.
 get(Key, KVs) when is_list(KVs) ->
     case lists:keyfind(Key, 1, KVs) of
         false -> erlang:error({badkey, Key}, [Key, KVs]);
@@ -91,11 +96,7 @@ get(Key, KVs) when is_list(KVs) ->
 %% "Default value"
 %% '''
 %% @since 0.1.0
--spec get(Key, KVs, Default) -> Value | Default when
-      Key :: term(),
-      KVs :: t(),
-      Default :: term(),
-      Value :: term().
+-spec get(Key, t(Key, Value), Default) -> Value | Default.
 get(Key, KVs, Default) when is_list(KVs) ->
     case lists:keyfind(Key, 1, KVs) of
         false -> Default;
