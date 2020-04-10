@@ -1,6 +1,6 @@
 # kvs
 
-`kvs` is a `proplists` replacement with an ergonomic interface.
+`kvs` is a fail-fast interface to key-value lists.
 The selling points are:
 
 - A convenient interface mimicking `maps`.
@@ -11,6 +11,25 @@ The selling points are:
 - Compatibility with Elixir keyword lists.
 
 - Implementation with functions from `lists`, which in turn are backed with BIFs.
+
+
+## TL;DR
+
+Use `kvs` is you prefer:
+
+```
+> kvs:get(z, [{a, 3}]).
+** exception error: {badkey,z}
+     in function  kvs:get/2
+        called as kvs:get(z,[{a,3}])
+```
+
+Over:
+
+```
+> proplists:get_value(z, [{a, 3}]).
+undefined
+```
 
 
 ## Use
@@ -25,7 +44,7 @@ Just add the dependency for Rebar3:
 ```
 
 
-## Why not `proplists`
+## Why `kvs`?
 
 ### `maps` interop
 
