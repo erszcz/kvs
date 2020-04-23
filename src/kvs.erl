@@ -1,3 +1,4 @@
+%% @doc A fail-fast interface to key-value lists.
 -module(kvs).
 -author("Radek Szymczyszyn <lavrin@gmail.com>").
 
