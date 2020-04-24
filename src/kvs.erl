@@ -108,6 +108,13 @@ get(Key, KVs, Default) when is_list(KVs) ->
 %% are substituted with pairs where the second element of each is `true'.
 %%
 %% The call fails with a `function_clause' if `Proplist' is not a list.
+%%
+%% Example:
+%%
+%% ```
+%% > kvs:proplist_to_map([a_property, {another_property, 1}]).
+%% #{another_property => 1,a_property => true}
+%% '''
 %% @since 0.1.0
 -spec proplist_to_map(proplists:proplist()) -> map().
 proplist_to_map(Proplist) when is_list(Proplist) ->
