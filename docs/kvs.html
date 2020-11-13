@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="generator" content="ExDoc v0.23.0">
     <meta name="project" content="kvs v0.1.0">
     <title>kvs — kvs v0.1.0</title>
-    <link rel="stylesheet" href="dist/erlang-94f16191f0a724ab8055.css" />
-    <script src="dist/sidebar_items-4bdf640d16.js"></script>
+    <link rel="stylesheet" href="dist/erlang-8a5f731dbc512bf6261b.css" />
+    <script src="dist/sidebar_items-5020ffec07.js"></script>
       <script src="docs_config.js"></script>
-    <script async src="dist/app-a9f3287e74588dddabf3.js"></script>
+    <script async src="dist/app-60a0c9f10e9e52eae31f.js"></script>
   </head>
   <body data-type="modules">
     <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
@@ -22,14 +22,14 @@
 
 <section class="sidebar">
   <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button">
-      <span class="icon-search" aria-hidden="true"></span>
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
     </button>
-    <button type="button" tabindex="-1" class="search-close-button">
-      <span class="icon-cross" title="Cancel search"></span>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
     </button>
     <label class="search-label">
-      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
     </label>
   </form>
 
@@ -42,9 +42,9 @@
     <div class="sidebar-projectDetails">
       <a href="kvs.html" class="sidebar-projectName">
 kvs      </a>
-      <h2 class="sidebar-projectVersion">
+      <strong class="sidebar-projectVersion">
         v0.1.0
-      </h2>
+      </strong>
     </div>
   </div>
 
@@ -52,7 +52,6 @@ kvs      </a>
     <li><a id="extras-list" href="#full-list">Pages</a></li>
 
       <li><a id="modules-list" href="#full-list">Modules</a></li>
-
 
   </ul>
   <div class="gradient"></div>
@@ -64,12 +63,12 @@ kvs      </a>
     <div id="content" class="content-inner">
 
       <h1>
-        <small class="app-vsn">kvs v0.1.0</small>
-kvs      </h1>
+        kvs <small class="app-vsn">(kvs v0.1.0)</small>
+      </h1>
 
 
         <section id="moduledoc">
-        </section>
+A fail-fast interface to key-value lists.        </section>
 
         <section id="summary" class="details-list">
           <h1 class="section-heading">
@@ -85,16 +84,27 @@ kvs      </h1>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#t:keyword/0">keyword/0</a>
+    <a href="#t:keyword/0">keyword()</a>
   </div>
-    <div class="summary-synopsis"><p>  An Elixir-compatible keyword list.
-  A list of pairs in which the first item (the key) is an atom.</p></div>
+    <div class="summary-synopsis">An Elixir-compatible keyword list. A list of pairs in which the first item (the key) is an atom.</div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#t:t/0">t/0</a>
+    <a href="#t:keyword/1">keyword(v)</a>
   </div>
-    <div class="summary-synopsis"><p>  The default <code class="inline">kvs</code> type - a list of key-value pairs.</p></div>
+    <div class="summary-synopsis">An Elixir-compatible keyword list. A list of pairs in which the first item (the key) is an atom and the second item is of type <code>V</code>.</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:t/0">t()</a>
+  </div>
+    <div class="summary-synopsis">The default <code>kvs</code> type - a list of key-value pairs.</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:t/2">t(k, v)</a>
+  </div>
+    <div class="summary-synopsis">A list of key-value pairs, where the keys are of type <code>K</code> and values are of type <code>V</code>.</div>
 </div>
   </div>
   <div class="summary-functions summary">
@@ -105,26 +115,25 @@ kvs      </h1>
   <div class="summary-signature">
     <a href="#from_proplist/1">from_proplist/1</a>
   </div>
-    <div class="summary-synopsis"><p>Unfolds a <code class="inline">Proplist</code> into a list of key-value pairs.</p></div>
+    <div class="summary-synopsis"><p>Unfolds a <code>Proplist</code> into a list of key-value pairs.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#get/2">get/2</a>
   </div>
-    <div class="summary-synopsis"><p>Returns the <code class="inline">Value</code> associated with <code class="inline">Key</code> if <code class="inline">KVs</code> contains <code class="inline">Key</code>.</p></div>
+    <div class="summary-synopsis"><p>Returns the <code>Value</code> associated with <code>Key</code> if <code>KVs</code> contains <code>Key</code>.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#get/3">get/3</a>
   </div>
-    <div class="summary-synopsis"><p>Returns <code class="inline">Value</code> associated with <code class="inline">Key</code> if <code class="inline">KVs</code> contains <code class="inline">Key</code>.
-  If no value is associated with <code class="inline">Key</code>, <code class="inline">Default</code> is returned.</p></div>
+    <div class="summary-synopsis"><p>Returns <code>Value</code> associated with <code>Key</code> if <code>KVs</code> contains <code>Key</code>. If no value is associated with <code>Key</code>, <code>Default</code> is returned.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#proplist_to_map/1">proplist_to_map/1</a>
   </div>
-    <div class="summary-synopsis"><p>Returns a map built from <code class="inline">Proplist</code>.</p></div>
+    <div class="summary-synopsis"><p>Returns a map built from <code>Proplist</code>.</p></div>
 </div>
   </div>
         </section>
@@ -143,16 +152,33 @@ Types          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature">keyword/0</h1>
-      <div class="specs">
-          <pre>keyword() :: [{<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}].
-</pre>
-      </div>
+    <h1 class="signature">keyword()</h1>
   </div>
+
   <section class="docstring">
-<p>  An Elixir-compatible keyword list.
-  A list of pairs in which the first item (the key) is an atom.</p>
-  </section>
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>keyword() :: [{<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}]</pre>
+      </div>
+
+An Elixir-compatible keyword list. A list of pairs in which the first item (the key) is an atom.  </section>
+</section>
+<section class="detail" id="t:keyword/1">
+  <div class="detail-header">
+    <a href="#t:keyword/1" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">keyword(v)</h1>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>keyword(v) :: [{<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), v}]</pre>
+      </div>
+
+An Elixir-compatible keyword list. A list of pairs in which the first item (the key) is an atom and the second item is of type <code>V</code>.  </section>
 </section>
 <section class="detail" id="t:t/0">
   <div class="detail-header">
@@ -160,15 +186,33 @@ Types          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature">t/0</h1>
-      <div class="specs">
-          <pre>t() :: [{<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}].
-</pre>
-      </div>
+    <h1 class="signature">t()</h1>
   </div>
+
   <section class="docstring">
-<p>  The default <code class="inline">kvs</code> type - a list of key-value pairs.</p>
-  </section>
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>t() :: [{<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}]</pre>
+      </div>
+
+The default <code>kvs</code> type - a list of key-value pairs.  </section>
+</section>
+<section class="detail" id="t:t/2">
+  <div class="detail-header">
+    <a href="#t:t/2" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">t(k, v)</h1>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>t(k, v) :: [{k, v}]</pre>
+      </div>
+
+A list of key-value pairs, where the keys are of type <code>K</code> and values are of type <code>V</code>.  </section>
 </section>
           </div>
         </section>
@@ -188,17 +232,20 @@ Functions          </h1>
     </a>
     <h1 class="signature">from_proplist/1</h1>
       <span class="note">(since 0.1.0)</span>
-      <div class="specs">
-          <pre>from_proplist(proplists:proplist()) -> <a href="#t:t/0">t</a>().
-</pre>
-      </div>
   </div>
+
   <section class="docstring">
-<p>Unfolds a <code class="inline">Proplist</code> into a list of key-value pairs.</p>
-<p>Properties which are not pairs are substituted with pairs
-  where the second element of each is <code class="inline">true</code>.
-The call fails with a <code class="inline">function_clause</code> if <code class="inline">Proplist</code> is not a list.</p>
-  </section>
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>from_proplist(<a href="http://www.erlang.org/doc/man/proplists.html#type-proplist">:proplists.proplist</a>()) :: <a href="#type-t">t</a>()</pre>
+      </div>
+
+<p>Unfolds a <code>Proplist</code> into a list of key-value pairs.</p><p>Properties which are not pairs are substituted with pairs where the second element of each is <code>true</code>.</p><p>The call fails with a <code>function_clause</code> if <code>Proplist</code> is not a list.</p><p>Example:</p><pre>  erl&gt; kvs:from_proplist([a, {b, 2}]).
+  [{a,true},{b,2}]
+  erl&gt; kvs:from_proplist(a).
+  ** exception error: no function clause matching
+                      kvs:from_proplist(a)
+                      (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 68)</pre>  </section>
 </section>
 <section class="detail" id="get/2">
   <div class="detail-header">
@@ -208,20 +255,17 @@ The call fails with a <code class="inline">function_clause</code> if <code class
     </a>
     <h1 class="signature">get/2</h1>
       <span class="note">(since 0.1.0)</span>
-      <div class="specs">
-          <pre>get(Key, KVs) -> Value
-       when Key :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), KVs :: <a href="#t:t/0">t</a>(), Value :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>().
-</pre>
-      </div>
   </div>
+
   <section class="docstring">
-<p>Returns the <code class="inline">Value</code> associated with <code class="inline">Key</code> if <code class="inline">KVs</code> contains <code class="inline">Key</code>.</p>
-<p>The call fails with a <code class="inline">{badkey, Key}</code> exception if no value is associated with <code class="inline">Key</code>,
-  or with a <code class="inline">function_clause</code> if <code class="inline">KVs</code> is not a list.</p>
-<p>Example:</p>
-<pre>  > kvs:get(a, [{a, 3}]).
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>get(key, <a href="#type-t">t</a>(key, value)) :: value when key: var, value: var</pre>
+      </div>
+
+<p>Returns the <code>Value</code> associated with <code>Key</code> if <code>KVs</code> contains <code>Key</code>.</p><p>The call fails with a <code>{badkey, Key}</code> exception if no value is associated with <code>Key</code>, or with a <code>function_clause</code> if <code>KVs</code> is not a list.</p><p>Example:</p><pre>  erl&gt; kvs:get(a, [{a, 3}]).
   3
-  > kvs:get(z, [{a, 3}]).
+  erl&gt; kvs:get(z, [{a, 3}]).
   ** exception error: {badkey,z}
        in function  kvs:get/2
           called as kvs:get(z,[{a,3}])</pre>  </section>
@@ -234,25 +278,19 @@ The call fails with a <code class="inline">function_clause</code> if <code class
     </a>
     <h1 class="signature">get/3</h1>
       <span class="note">(since 0.1.0)</span>
-      <div class="specs">
-          <pre>get(Key, KVs, Default) -> Value | Default
-       when
-           Key :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-           KVs :: <a href="#t:t/0">t</a>(),
-           Default :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-           Value :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>().
-</pre>
-      </div>
   </div>
+
   <section class="docstring">
-<p>Returns <code class="inline">Value</code> associated with <code class="inline">Key</code> if <code class="inline">KVs</code> contains <code class="inline">Key</code>.
-  If no value is associated with <code class="inline">Key</code>, <code class="inline">Default</code> is returned.</p>
-<p>The call fails with a <code class="inline">function_clause</code> if <code class="inline">KVs</code> is not a list.</p>
-<p>Example:</p>
-<pre>  > kvs:get(a, [{a, "Just a"}], "Default value").
-  "Just a"
-  > kvs:get(z, [{a, "Just a"}], "Default value").
-  "Default value"</pre>  </section>
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>get(key, <a href="#type-t">t</a>(key, value), default) :: value | default
+when key: var, default: var, value: var</pre>
+      </div>
+
+<p>Returns <code>Value</code> associated with <code>Key</code> if <code>KVs</code> contains <code>Key</code>. If no value is associated with <code>Key</code>, <code>Default</code> is returned.</p><p>The call fails with a <code>function_clause</code> if <code>KVs</code> is not a list.</p><p>Example:</p><pre>  erl&gt; kvs:get(a, [{a, &quot;Just a&quot;}], &quot;Default value&quot;).
+  &quot;Just a&quot;
+  erl&gt; kvs:get(z, [{a, &quot;Just a&quot;}], &quot;Default value&quot;).
+  &quot;Default value&quot;</pre>  </section>
 </section>
 <section class="detail" id="proplist_to_map/1">
   <div class="detail-header">
@@ -262,17 +300,20 @@ The call fails with a <code class="inline">function_clause</code> if <code class
     </a>
     <h1 class="signature">proplist_to_map/1</h1>
       <span class="note">(since 0.1.0)</span>
-      <div class="specs">
-          <pre>proplist_to_map(proplists:proplist()) -> <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>().
-</pre>
-      </div>
   </div>
+
   <section class="docstring">
-<p>Returns a map built from <code class="inline">Proplist</code>.</p>
-<p>The proplist is first unfolded, i.e. properties which are not pairs
-  are substituted with pairs where the second element of each is <code class="inline">true</code>.
-The call fails with a <code class="inline">function_clause</code> if <code class="inline">Proplist</code> is not a list.</p>
-  </section>
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre>proplist_to_map(<a href="http://www.erlang.org/doc/man/proplists.html#type-proplist">:proplists.proplist</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()</pre>
+      </div>
+
+<p>Returns a map built from <code>Proplist</code>.</p><p>The proplist is first unfolded, i.e. properties which are not pairs are substituted with pairs where the second element of each is <code>true</code>.</p><p>The call fails with a <code>function_clause</code> if <code>Proplist</code> is not a list.</p><p>Example:</p><pre>  erl&gt; kvs:proplist_to_map([a, {b, 2}]).
+  #{a =&gt; true,b =&gt; 2}
+  erl&gt; kvs:proplist_to_map(a).
+  ** exception error: no function clause matching
+                      kvs:proplist_to_map(a)
+                      (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 125)</pre>  </section>
 </section>
           </div>
         </section>
@@ -280,14 +321,16 @@ The call fails with a <code class="inline">function_clause</code> if <code class
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.23.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
           </span>
           <span class="line">
-            designed by
+            Designed by
             <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
           </span>
         </p>
         <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
           <button class="line footer-button display-shortcuts-help">
             Display keyboard shortcuts
           </button>
