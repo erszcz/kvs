@@ -33,20 +33,20 @@
 -export_type([t/0, t/2,
               keyword/0, keyword/1]).
 
--type t() :: [{term(), term()}].
+-type t() :: [{any(), any()}].
 %% The default `kvs' type - a list of key-value pairs.
 
 -type t(K, V) :: [{K, V}].
 %% A list of key-value pairs, where the keys are of type `K' and values are of type `V'.
 
--type keyword() :: [{atom(), term()}].
+-type keyword() :: [{atom(), any()}].
 %% An Elixir-compatible keyword list.
 %% A list of pairs in which the first item (the key) is an atom.
 
--type keyword(T) :: [{atom(), T}].
+-type keyword(V) :: [{atom(), V}].
 %% An Elixir-compatible keyword list.
 %% A list of pairs in which the first item (the key) is an atom
-%% and the second item is of type `T'.
+%% and the second item is of type `V'.
 
 %% @doc Unfolds a `Proplist' into a list of key-value pairs.
 %%
