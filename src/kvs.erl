@@ -54,6 +54,17 @@
 %% where the second element of each is `true'.
 %%
 %% The call fails with a `function_clause' if `Proplist' is not a list.
+%%
+%% Example:
+%%
+%% ```
+%% > kvs:from_proplist([a, {b, 2}]).
+%% [{a,true},{b,2}]
+%% > kvs:from_proplist(a).
+%% ** exception error: no function clause matching
+%%                     kvs:from_proplist(a)
+%%                     (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 68)
+%% '''
 %% @since 0.1.0
 -spec from_proplist(proplists:proplist()) -> t().
 from_proplist(Proplist) when is_list(Proplist) ->
@@ -113,8 +124,12 @@ get(Key, KVs, Default) when is_list(KVs) ->
 %% Example:
 %%
 %% ```
-%% > kvs:proplist_to_map([a_property, {another_property, 1}]).
-%% #{another_property => 1,a_property => true}
+%% > kvs:proplist_to_map([a, {b, 2}]).
+%% #{a => true,b => 2}
+%% > kvs:proplist_to_map(a).
+%% ** exception error: no function clause matching
+%%                     kvs:proplist_to_map(a)
+%%                     (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 125)
 %% '''
 %% @since 0.1.0
 -spec proplist_to_map(proplists:proplist()) -> map().
