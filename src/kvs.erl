@@ -58,9 +58,9 @@
 %% Example:
 %%
 %% ```
-%% > kvs:from_proplist([a, {b, 2}]).
+%% erl> kvs:from_proplist([a, {b, 2}]).
 %% [{a,true},{b,2}]
-%% > kvs:from_proplist(a).
+%% erl> kvs:from_proplist(a).
 %% ** exception error: no function clause matching
 %%                     kvs:from_proplist(a)
 %%                     (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 68)
@@ -78,9 +78,9 @@ from_proplist(Proplist) when is_list(Proplist) ->
 %% Example:
 %%
 %% ```
-%% > kvs:get(a, [{a, 3}]).
+%% erl> kvs:get(a, [{a, 3}]).
 %% 3
-%% > kvs:get(z, [{a, 3}]).
+%% erl> kvs:get(z, [{a, 3}]).
 %% ** exception error: {badkey,z}
 %%      in function  kvs:get/2
 %%         called as kvs:get(z,[{a,3}])
@@ -101,9 +101,9 @@ get(Key, KVs) when is_list(KVs) ->
 %% Example:
 %%
 %% ```
-%% > kvs:get(a, [{a, "Just a"}], "Default value").
+%% erl> kvs:get(a, [{a, "Just a"}], "Default value").
 %% "Just a"
-%% > kvs:get(z, [{a, "Just a"}], "Default value").
+%% erl> kvs:get(z, [{a, "Just a"}], "Default value").
 %% "Default value"
 %% '''
 %% @since 0.1.0
@@ -124,9 +124,9 @@ get(Key, KVs, Default) when is_list(KVs) ->
 %% Example:
 %%
 %% ```
-%% > kvs:proplist_to_map([a, {b, 2}]).
+%% erl> kvs:proplist_to_map([a, {b, 2}]).
 %% #{a => true,b => 2}
-%% > kvs:proplist_to_map(a).
+%% erl> kvs:proplist_to_map(a).
 %% ** exception error: no function clause matching
 %%                     kvs:proplist_to_map(a)
 %%                     (/Users/erszcz/work/erszcz/kvs/src/kvs.erl, line 125)
